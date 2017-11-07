@@ -11,6 +11,14 @@ def test_run():
     print(df1)
 
     #Read spy data
+    dfSPY = pd.read_csv("data/SPY.csv", index_col="Date", parse_dates=True)
+    #print(dfSPY)
+
+    #join dfSPY with df1
+    df1=df1.join(dfSPY)
+    print(df1)
+    df1=df1.dropna()
+    print(df1)
 
 
 if __name__== "__main__":
